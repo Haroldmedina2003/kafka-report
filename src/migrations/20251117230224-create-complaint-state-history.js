@@ -38,14 +38,6 @@ module.exports = {
           type: Sequelize.STRING,
           allowNull: false,
         },
-        last_state_duration: {
-          type: Sequelize.TIME,
-          allowNull: true,
-        },
-        total_duration: {
-          type: Sequelize.TIME,
-          allowNull: true,
-        },
         change_at: {
           type: Sequelize.DATE,
           defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),

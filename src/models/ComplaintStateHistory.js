@@ -13,8 +13,6 @@ module.exports = (sequelize, DataTypes) => {
       previous_state: { type: DataTypes.STRING, allowNull: true },
       new_state: { type: DataTypes.STRING, allowNull: true },
       user_email: { type: DataTypes.STRING, allowNull: false },
-      last_state_duration: { type: DataTypes.TIME, allowNull: true },
-      total_duration: { type: DataTypes.TIME, allowNull: true },
       change_at: { type: DataTypes.DATE, defaultValue: DataTypes.NOW },
     },
     {
