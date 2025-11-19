@@ -1,8 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const { getReportsPaginedList } = require("../controller/reportsController");
 
-router.get("/", (req, res) => {
-  res.json({ message: "Reports service is running." });
-});
+router.get("/", getReportsPaginedList);
 
 module.exports = router;

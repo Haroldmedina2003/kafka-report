@@ -15,3 +15,15 @@ exports.processComplaintStateChange = async (data) => {
     throw error;
   }
 };
+
+exports.getPaginatedReports = async (page, pageSize) => {
+  try {
+    const paginatedReports = await reportRepository.getPaginatedReports(
+      page,
+      pageSize
+    );
+    return paginatedReports;
+  } catch (error) {
+    throw error;
+  }
+};

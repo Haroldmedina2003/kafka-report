@@ -1,4 +1,5 @@
 const db = require("../models");
+const { paginate } = require("../interfaces/IPagination");
 
 exports.SaveComplaintStateChangeReport = async (
   complaintId,
@@ -21,6 +22,23 @@ exports.SaveComplaintStateChangeReport = async (
     });
   } catch (error) {
     console.error("Error saving complaint state change report:", error);
+    throw error;
+  }
+};
+
+exports.getPaginatedReports = async (page, pageSize) => {
+  try {
+    const paginatedResult = await paginate({
+      model: db.ComplaintStateHistory,
+      page,
+      pageSize,
+      options: {
+        order: [["change_at", "DESC"]],
+      },
+    });
+    return paginatedResult;
+  } catch (error) {
+    console.error("Error getting paginated reports:", error);
     throw error;
   }
 };

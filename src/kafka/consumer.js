@@ -1,6 +1,6 @@
 const { kafka } = require("./config");
 const logger = require("../utils/logger");
-const { processComplaintStateChange } = require("../service/reportService");
+const { processComplaintStateChange } = require("../services/reportsService");
 
 const consumer = kafka.consumer({
   groupId: process.env.KAFKA_GROUP_ID,
